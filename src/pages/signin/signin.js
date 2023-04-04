@@ -27,7 +27,7 @@ const Signin = () => {
     const pass = json.find(o => o.password === passwordRef.current.value)
 
     if (pass && user) {
-      window.location.href = "/sports-pro-site/"
+      window.location.href = "/"
       console.log(usernameRef.current.value)
       console.log(passwordRef.current.value)
     }else{

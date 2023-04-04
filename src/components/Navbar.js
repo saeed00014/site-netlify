@@ -24,17 +24,17 @@ const Navbar = () => {
   return (
     <nav id='nav' className='m-navbar'>
       <div className="container">
-        <Link to='sports-pro-site' onClick={() => manages("Home")} className="logo">
+        <Link to='/' onClick={() => manages("Home")} className="logo">
             <img src={logo} alt='Nea Logo'/>
         </Link>
         <ul className={`nav__links ${list ? 'show__list' : 'hide__list'}`}>
           <div className="navbar-right-big-pic">
-          <Link className='sinup-btn1' to='sports-pro-site/card'>
+          <Link className='sinup-btn1' to='/card'>
             <button className='signup-btn1'>
               <h4>card</h4>
             </button>
           </Link>
-          <Link className='sinup-btn1' to='sports-pro-site/signup'>
+          <Link className='sinup-btn1' to='/signup'>
             <button className='signup-btn1'>
               <h3>sign up</h3>
             </button>
@@ -51,12 +51,12 @@ const Navbar = () => {
           })}
         </ul>
         <div className="navbar-right">
-          <Link className='sinup-btn' to='sports-pro-site/card'>
+          <Link className='sinup-btn' to='/card'>
             <button className='signup-btn'>
               <h3>card</h3>
             </button>
           </Link>
-          <Link className='sinup-btn' to='sports-pro-site/signup'>
+          <Link className='sinup-btn' to='/signup'>
             <button className='signup-btn'>
               <h3>sign up</h3>
             </button>

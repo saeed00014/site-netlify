@@ -40,7 +40,7 @@ const Signup = () => {
   }
 
   const navigater = () => {
-    window.location.href = "/sports-pro-site/signin"
+    window.location.href = "/signin"
   }
   
   return (

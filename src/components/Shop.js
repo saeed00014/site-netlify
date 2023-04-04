@@ -52,7 +52,7 @@ const Shop = () => {
                 </div>
                 <h3>{details.title}</h3>
                 <h3>{details.price}</h3>
-                <Link onClick={() => handleClick(details.image, details.dis, details.title, details.price)} to="card">
+                <Link onClick={() => handleClick(details.image, details.dis, details.title, details.price)} to="/card">
                  <button className='addcard-btn'>Add Card</button>
                 </Link>
               </div>

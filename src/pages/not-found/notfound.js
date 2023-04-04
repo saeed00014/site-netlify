@@ -12,7 +12,7 @@ const Notfound = () => {
           </div>
           <div className="p-absolute2">
             <p>What are you looking for?</p>
-            <Link to='/sports-pro-site'>
+            <Link to='/'>
               <p>go to home page</p>
             <div className='line-container'>
               <div className="line-left">

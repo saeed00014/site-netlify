@@ -19,15 +19,15 @@ const App = () => {
       <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="sports-pro-site" index element={<Home />}/>
-        <Route path="sports-pro-site/about" element={<About />}/>
-        <Route path="sports-pro-site/contact" element={<Contact />}/>
-        <Route path="sports-pro-site/plans/*" element={<Plans />}/>
-        <Route path="sports-pro-site/trainers" element={<Trainers />}/>
-        <Route path="sports-pro-site/card"  element={<Card />} />
-        <Route path="sports-pro-site/*" element={<Notfound />}/>
-        <Route path="sports-pro-site/signup" element={<Signup />}/>
-        <Route path="sports-pro-site/signin" element={<Signin />}/>
+        <Route path="/" index element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path="/contact" element={<Contact />}/>
+        <Route path="/plans/*" element={<Plans />}/>
+        <Route path="/trainers" element={<Trainers />}/>
+        <Route path="/card"  element={<Card />} />
+        <Route path="/*" element={<Notfound />}/>
+        <Route path="/signup" element={<Signup />}/>
+        <Route path="/signin" element={<Signin />}/>
       </Routes>
       <Footer />
       </BrowserRouter>

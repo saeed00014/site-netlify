@@ -59,7 +59,7 @@ const Plans = () => {
                 })}
                 <div className='buy-btn'>
                   <span id='tick'></span>
-                  <Link onClick={() => handleClick(plan.image, plan.dis, plan.title, plan.price)} to="/sports-pro-site/card">
+                  <Link onClick={() => handleClick(plan.image, plan.dis, plan.title, plan.price)} to="/card">
                     <button>Buy The Plan</button>
                   </Link>
                 </div>

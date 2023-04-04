@@ -30,26 +30,26 @@ export const links = [
     {
         id:1,
         name: "Home",
-        path: 'sports-pro-site/'
+        path: '/'
     },
     {
         id:2,
         name: "About",
-        path: 'sports-pro-site/about'
+        path: '/about'
     },{
         id:4,
         name: "Plans",
-        path: 'sports-pro-site/plans'
+        path: '/plans'
     },
     {
         id:5,
         name: "Trainers",
-        path: 'sports-pro-site/trainers'
+        path: '/trainers'
     },
     {
         id:6,
         name: "Contact",
-        path: 'sports-pro-site/contact'
+        path: '/contact'
     }
 ]
 

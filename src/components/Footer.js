@@ -36,24 +36,24 @@ const Footer = () => {
         <article className='article__bottom-container'>
           <article className='sec-article'>
             <h4>Permalinks</h4>
-            <Link to='sports-pro-site/about'>About</Link>
-            <Link to='sports-pro-site/plans'>Plans</Link>
-            <Link to='sports-pro-site/trainers'>Trainers</Link>
-            <Link to='sports-pro-site/blog'>Blog</Link>
-            <Link to='sports-pro-site/contact'>Contact</Link>
+            <Link to='/about'>About</Link>
+            <Link to='/plans'>Plans</Link>
+            <Link to='/trainers'>Trainers</Link>
+            <Link to='/blog'>Blog</Link>
+            <Link to='/contact'>Contact</Link>
           </article>
           <article className='third-article'>
             <h4>Insight</h4>
             <Link to='sports-pro-site/card'>Card</Link>
-            <Link to='sports-pro-site/s'>Case Studios</Link>
-            <Link to='sports-pro-site/s'>Events</Link>
-            <Link to='sports-pro-site/s'>communities</Link>
-            <Link to='sports-pro-site/s'>FAQs</Link>
+            <Link to='/s'>Case Studios</Link>
+            <Link to='/s'>Events</Link>
+            <Link to='/s'>communities</Link>
+            <Link to='/s'>FAQs</Link>
           </article>
           <article className='fourth-article'>
             <h4>Get In Touch</h4>
-            <Link to='sports-pro-site/contact'>Contact Us</Link>
-            <Link to='sports-pro-site/dsdf'>Support</Link>
+            <Link to='/contact'>Contact Us</Link>
+            <Link to='/dsdf'>Support</Link>
           </article>
         </article>
       </div>
