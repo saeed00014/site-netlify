@@ -1,0 +1,28 @@
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--main-back);
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+
+}
+
+:root {
+    --main-back: #00539cff;
+    --alike-color: rgba(0, 255, 255, 0.178);
+    --golden-color: #e2c000;
+    --color-primary:rgb(235, 159, 122);
+    --main-text: rgb(255, 255, 255);
+    --icon-back: rgb(27, 27, 27);
+    --background-color:rgb(236, 180, 154);
+  }
+     

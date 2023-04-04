@@ -1,0 +1,409 @@
+.m-navbar {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 70px;
+  background-color: var(--background-color);
+  overflow-x: visible;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  background-color: var(--background-color);
+  z-index: 2;
+}
+
+.logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 20%;
+  background-color: var(--background-color);
+  z-index: 3;
+}
+
+.logo-image {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 90%;
+  background-color: var(--background-color);
+}
+
+.logo img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  object-fit: cover;
+  background-color: var(--background-color);
+}
+
+.navbar-right {
+  display: none;
+  align-items: center;
+  justify-content: right;
+  width: 50%;
+  gap: 2rem;
+}
+
+.navbar-right-big-pic {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-right: -20px;
+  gap: 0.5rem;
+  z-index: 6;
+}
+
+.nav__links {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  width: 70%;
+  padding-right: 0;
+  background-color: var(--background-color);
+}
+
+.nav__links li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.8rem;
+  height: 2.6rem;
+  border-bottom: 1px solid var(--main-text);
+  background-color: var(--color-primary);
+  color: var(--main-text);
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+.nav__links li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5.8rem;
+  height: 2.6rem;
+  border-bottom: 1px solid var(--main-text);
+  background-color: var(--color-primary);
+  color: var(--main-text);
+  cursor: pointer;
+  font-size: 1.4rem;
+  z-index: 4;
+}
+
+.signup-btn,
+.signup-btn1 {
+  width: 5.8rem;
+  height: 2.6rem;
+  border-radius: 1.4rem;
+  background-color: var(--color-primary);
+  color: var(--main-text);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.nav__links li a:hover {
+  color: red;
+}
+
+.togle-btn {
+  display: none;
+}
+
+.nav-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-active::after {
+  content: '';
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: var(--background-color);
+  position: absolute;
+  margin-top: 4.5rem;
+  transform: rotate(45deg);
+}
+
+.page-parts:hover,
+.page-parts:hover .nav-active a {
+  display: flex;
+  background-color: var(--alike-color);
+  color: red;
+}
+
+.page-parts:hover a {
+  color: var(--main-text);
+}
+
+/*go top*/
+
+.gotop-btn {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 1.6rem;
+  border-radius: 50px;
+  color: var(--main-text);
+  background: var(--golden-color);
+  opacity: 0.8;
+  z-index: 12;
+}
+
+
+@media screen and (min-width:650px) and (max-width: 1000px) {
+  .container {
+    position: relative;
+    display: flex;
+    height: 60px;
+    width: 100vw;
+  }
+
+  .logo-image img{
+    height: 35px;
+    width: 120px;
+  }
+
+  .signup-btn1 {
+    display: none;
+  }
+
+  .logo {
+    width: 30%;
+  }
+
+  .navbar-right {
+    display: flex;
+    width: 60%;
+  }
+
+  .navbar-right-big-pic {
+    display: none;
+  }
+
+  .toggle-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: transparent;
+    height: 80px;
+    padding-right: 1%;
+  }
+
+  #hamber {
+    width: 40px;
+    height: 40px;
+    color: var(--main-text);
+  }
+
+  .nav__links {
+    position: absolute;
+    right: -100%;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    justify-content: center;
+    align-items: end;
+    margin-right: 25px;
+    width: 200px;
+    z-index: 11111;
+  }
+
+  .hide__list {
+    right: -20%;
+    transition: all 0.4s;
+  }
+
+  .show__list {
+    right: 0;
+    transition: all 0.7s;
+  }
+
+  .nav-active::after {
+    display: none;
+  }
+  
+  .hide__list li{
+    transform: rotate3d(-6, 0, 0, 90deg);
+    transition: all 0.4s ease;
+  }
+
+  .show__list li{   
+    border-bottom: 1px solid;    
+    transform: rotate3d(1, 1, 0, 0deg);
+    transition: all 0.4s ease;
+    transition-delay: calc(60ms * var(--i));
+  }
+
+  .nav__links li a{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 180px;
+    height: 80px;
+    background-color: var(--color-primary);
+    color: var(--main-text);
+    cursor: pointer;
+  }
+  
+  .nav__links li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: var(--color-primary);
+    width: 200px;
+    height: 5rem;
+    font-size: 2rem;
+    padding-left: 1.5rem;
+  }
+
+  .page-parts {
+    display: none;
+  }
+ 
+}
+
+@media screen and (max-width:650px) {
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+    height: 60px;
+    width: 100vw;
+  }
+
+  .logo-image img{
+    height: 35px;
+    width: 120px;
+  }
+
+  .signup-btn1 {
+    display: none;
+  }
+
+  .navbar-right {
+    display: flex;
+    width: 70%;
+    gap: 0.5rem;
+    z-index: 3;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 27%;
+    z-index: 2;
+  }
+
+  .logo img {
+    width: 130px;
+  }
+
+  .navbar-right-big-pic {
+    display: none;
+  }
+
+  .toggle-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background: transparent;
+    height: 80px;
+    padding-right: 4%;
+  }
+
+  #hamber {
+    width: 40px;
+    height: 40px;
+    color: var(--main-text);
+  }
+
+  .nav__links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    justify-content: center;
+    align-items: end;
+    width: 200px;
+    margin-right: 0px;
+    z-index: 17;
+  }
+
+  .hide__list {
+    right: -50%;
+    transition: all 0.9s;
+  }
+
+  .show__list {
+    margin-right: 0;
+    padding-right: 0;
+    right: 0;
+    transition: all 0.8s;
+    z-index: 17;
+  }
+  
+  .nav-active::after {
+    display: none;
+  }
+
+  .hide__list li{
+    transform: rotate3d(-6, 0, 0, 90deg);
+    transition: all 0.4s;
+  }
+
+  .show__list li{   
+    border-bottom: 1px solid;    
+    transform: rotate3d(1, 1, 0, 0deg);
+    transition: all 0.8s ease;
+  }
+
+  .nav__links li a{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 180px;
+    height: 80px;
+    background-color: var(--color-primary);
+    color: var(--main-text);
+    cursor: pointer;
+  }
+  
+  .nav__links li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: var(--color-primary);
+    width: 200px;
+    height: 5rem;
+    font-size: 2rem;
+    padding-left: 1.5rem;
+  }
+
+  .page-parts {
+    display: none;
+  }
+}

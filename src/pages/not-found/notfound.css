@@ -1,0 +1,149 @@
+.notfound {
+  height: 600px;
+  width: 100vw;
+}
+
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.notfound-parallax {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 400px;
+  background-image: linear-gradient(to bottom,  var(--alike-color) 80%,var(--background-color) -100%);
+}
+
+.p-absolute {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 50px;
+  left: 25%;
+}
+
+.p-absolute h1 {
+  font-size: 7rem;
+  color: var(--main-text);
+  padding-right: 2rem;
+  margin-bottom: -1rem;
+}
+
+.p-absolute p {
+  font-size: 1.7rem;
+  width: 200px;
+  height: 125px;
+  padding-top: .7rem;
+  padding-left: 1rem;
+  background-color: var(--main-text);
+  border-top-right-radius: 3rem;
+}
+
+.p-absolute2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 110px;
+  right: 25%;
+  gap: 1.3rem;
+}
+
+.p-absolute2 p {
+  font-size: 2rem;
+  color: var(--main-text);
+}
+
+.p-absolute2 a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  width: 150px;
+  height: 50px;
+  color: var(--main-text);
+  background-color: var(--background-color);
+  transition: all 1s ease;
+}
+
+.line-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  width: 240px;
+  height: 60%;
+  transition: all .7s ease;
+}
+
+.p-absolute2 a p {
+  font-size: 1.2rem;
+}
+
+.line-left,
+.line-right {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  transition: all 1s ease;
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  background-color: var(--main-text);
+}
+
+.p-absolute2 a:hover {
+  box-shadow: 0px 0px 50px var(--golden-color);
+  transition: all .7s ease;
+}
+
+.p-absolute2 a:hover .line-container {
+  gap: 0;
+  transition: all 1s ease;
+}
+
+.p-absolute2 a:hover .line{
+  background: none;
+  transition: all 1s ease;
+}
+
+@media only screen and (min-width:650px) and (max-width:1000px) {
+  .p-absolute {
+    left: 10%;
+  }
+
+  .p-absolute2 {
+    right: 10%;
+  }
+}
+
+@media only screen and (min-width:0px) and (max-width:650px) {
+  .notfound {
+    margin-bottom: 0;
+  }
+
+  .p-absolute {
+    left: 2%;
+  }
+
+  .p-absolute2 {
+    right: 2%;
+    top: 10px;
+  }
+
+  .p-absolute2 p {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,133 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.card__content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 90%;
+  gap: 3rem 0;
+  margin: 3rem 0;
+  max-width: 1170px;
+}
+
+.card-content {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  align-items: center;
+  width: 325px;
+  color: var(--main-text);
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 0rem .5rem .3rem .5rem;
+  min-width: 315px;
+  transition: all 0.3s;
+}
+
+.card-content:hover {
+  background-color: var(--alike-color);
+  transition: all 0.3s;
+}
+
+.card-part {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-del {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
+  padding-bottom: 4px;
+}
+
+#x-card {
+  cursor: pointer;
+  border-radius: 50px;
+  width: 28px;
+  height: 28px;
+  padding: 3px;
+}
+
+#x-card:hover {
+  color: red;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.card-img img {
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 10px;
+} 
+
+.card-content h2,
+.card-content p,
+.card-contenth3 {
+  margin-bottom: 0.7rem;
+}
+
+.card-del {
+  background-color: transparent;
+  color: var(--main-text);
+  font-size: 1.5rem;
+}
+
+.complete-p {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  width: 325px;
+  height: 40px;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: var(--main-text);
+  transition: all 0.3s;
+}
+
+.complete-p:hover {
+  background-color: var(--golden-color);
+  transition: all 0.3s;
+}
+
+@media only screen and (min-width:0) and (max-width:650px) {
+  .card-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card__content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
