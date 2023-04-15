@@ -11,7 +11,6 @@ import Notfound from "./pages/not-found/notfound.js"
 import Plans from "./pages/plans/plans.js"
 import Trainers from "./pages/trainers/trainers.js"
 import Signup from "./pages/signup/signup.js"
-import Signin from "./pages/signin/signin.js"
 
 
 const App = () => {
@@ -27,7 +26,6 @@ const App = () => {
         <Route path="/card"  element={<Card />} />
         <Route path="/*" element={<Notfound />}/>
         <Route path="/signup" element={<Signup />}/>
-        <Route path="/signin" element={<Signin />}/>
       </Routes>
       <Footer />
       </BrowserRouter>

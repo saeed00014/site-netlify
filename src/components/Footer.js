@@ -1,22 +1,20 @@
 import { Link } from 'react-router-dom'
-import logo from '../images/logo.png'
 
 import { FaLinkedinIn } from 'react-icons/fa/index.esm.js'
 import { FaFacebookF } from 'react-icons/fa/index.esm.js'
 import { BsTwitter } from 'react-icons/bs/index.esm.js'
 import { AiOutlineInstagram } from 'react-icons/ai/index.esm.js'
-import FAQ from './FAQ.js'
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer__main-container">
         <article className='first-article'>
-          <Link to='sports-pro-site'>
-            <img src={logo} alt="ff" />
+          <Link to='/'>
+            <span>BODYMAKE</span>
           </Link>
           <p>
-          To insert an icon, add the name of the icon class to any inline HTML element. The and elements are widely used to add icons.
+            find us in social media our admins aswer you everyday in week from 10AM to 17PM
           </p>
           <div className="web-icons">
             <div className="a-container">

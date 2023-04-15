@@ -1,5 +1,5 @@
 .notfound {
-  height: 600px;
+  height: 800px;
   width: 100vw;
 }
 
@@ -14,7 +14,7 @@
   position: relative;
   display: flex;
   width: 100%;
-  height: 400px;
+  height: 500px;
   background-image: linear-gradient(to bottom,  var(--alike-color) 80%,var(--background-color) -100%);
 }
 
@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  bottom: 50px;
+  bottom: 80px;
   left: 25%;
 }
 
@@ -70,7 +70,7 @@
   width: 150px;
   height: 50px;
   color: var(--main-text);
-  background-color: var(--background-color);
+  background-color: var(--golden-color);
   transition: all 1s ease;
 }
 
@@ -134,13 +134,17 @@
     margin-bottom: 0;
   }
 
+  .notfound-parallax {
+    margin-top: 5rem;
+  }
+  
   .p-absolute {
     left: 2%;
   }
 
   .p-absolute2 {
     right: 2%;
-    top: 10px;
+    top: 2rem;
   }
 
   .p-absolute2 p {

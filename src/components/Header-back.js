@@ -1,20 +1,22 @@
-import '../pages/contact/contact.css'
+import '../pages/trainers/trainers.css'
+
 
 const Header = ({image, title, text }) => {
+  
+  const mystyle = {
+    backgroundImage: 
+    `url(${image})`
+  };
+
   return (
-    <header>
-    <div className="header__main-container">
+    <header style={mystyle} className='header-pages' id='header'>
       <div className="header-container">
-        <div className="background-img">
-          <img src={image} alt="" />
-        </div>
-        <div className="conntent-img">
+        <div className="content-img">
           <h1>{title}</h1>
           <p>{text}</p>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
   )
 }
 

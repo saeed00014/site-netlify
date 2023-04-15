@@ -1,5 +1,21 @@
+import program1 from './images/program1.jpg'
+import program2 from './images/program2.jpg'
+import program3 from './images/program3.jpg'
+import program4 from './images/program4.jpg'
+
+
+import value1 from './images/value1.jpg'
+import value2 from './images/value2.jpg'
+import value3 from './images/value3.jpg'
+import value4 from './images/value4.jpg'
+import value5 from './images/value5.jpg'
+
+
+
+
 import shop1 from './images/shop1.jpg'
 import shop2 from './images/shop2.jpg'
+import shop3 from './images/shop3.jpg'
 
 
 import ava1 from "./images/avatar1.jpg"
@@ -45,11 +61,6 @@ export const links = [
         id:5,
         name: "Trainers",
         path: '/trainers'
-    },
-    {
-        id:6,
-        name: "Contact",
-        path: '/contact'
     }
 ]
 
@@ -62,21 +73,27 @@ export const links = [
 export const programs = [
     {
         id: 1,
-        title: "Program One",
-        info: "This is a plan for new athletes who doesnt have much time",
+        image: program1,
+        info: "Are You New and just want to Get Started",
         path: "plans/programs/111"
     },
     {
         id: 2,
-        title: "Program Two",
-        info: "This is a plan for new athletes who wants to become professional",
+        image: program2,
+        info: "You Are New but You Want to Try Hard",
         path: "plans/programs/222"
     },
     {
         id: 3,
-        title: "Program Three",
-        info: "This is a plan for exprinced athletes to keep them on shape",
+        image: program3,
+        info: "You Are Exprienced and Need to Stay Shaped",
         path: "plans/programs/333"
+    },
+    {
+        id: 4,
+        image: program4,
+        info: "You Want to Become a Legend",
+        path: "plans/programs/321433"
     }
 ]
 
@@ -89,10 +106,8 @@ export const programs = [
             dis: 'This package is perfect for beginners who need constant help',
             price: 29.99,
             features: [
-                {feature: 'First Feature', available: true},
                 {feature: 'Second Feature', available: true},
                 {feature: 'Third Feature', available: true},
-                {feature: 'Fourth Feature', available: true},
                 {feature: 'Fifth Feature', available: true},
                 {feature: 'Fifth Feature Plus', available: false},
                 {feature: 'Sixth Feature', available: false},
@@ -101,20 +116,17 @@ export const programs = [
                 {feature: 'Eighth Feature', available: false},
                 {feature: 'Ninth Feature', available: false},
                 {feature: 'Tenth Feature', available: false},
-                {feature: 'Eleventh Feature', available: false}
             ]
         },
         {
             id: 2,
             title: 'Silver Package',
             image: package1,
-            dis: 'This is the perfect package for beginners who know what their doing',
+            dis: 'This is the perfect package for beginners',
             price: 49.99,
             features: [
-                {feature: 'First Feature', available: true},
                 {feature: 'Second Feature', available: true},
                 {feature: 'Third Feature', available: true},
-                {feature: 'Fourth Feature', available: true},
                 {feature: 'Fifth Feature', available: true},
                 {feature: 'Fifth Feature Plus', available: true},
                 {feature: 'Sixth Feature', available: true},
@@ -123,20 +135,17 @@ export const programs = [
                 {feature: 'Eighth Feature', available: false},
                 {feature: 'Ninth Feature', available: false},
                 {feature: 'Tenth Feature', available: false},
-                {feature: 'Eleventh Feature', available: false}
             ]
         },
         {
             id: 3,
             title: 'Gold Package',
             image: package2,
-            dis: 'This package is perfect for busy people who need home service',
+            dis: 'This package is perfect for more exprienced athletes',
             price: 89.99,
             features: [
-                {feature: 'First Feature', available: true},
                 {feature: 'Second Feature', available: true},
                 {feature: 'Third Feature', available: true},
-                {feature: 'Fourth Feature', available: true},
                 {feature: 'Fifth Feature', available: true},
                 {feature: 'Fifth Feature Plus', available: true},
                 {feature: 'Sixth Feature', available: true},
@@ -145,7 +154,6 @@ export const programs = [
                 {feature: 'Eighth Feature', available: true},
                 {feature: 'Ninth Feature', available: true},
                 {feature: 'Tenth Feature', available: true},
-                {feature: 'Eleventh Feature', available: true}
             ]
         }
     ]
@@ -156,23 +164,33 @@ export const programs = [
 export const values = [
     {
         id: 1,
-        title: "Value One",
-        desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
+        image: value1,
+        title: "",
+        desc: ""
     },
     {
         id: 2,
-        title: "Value Two",
-        desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
+        image: value2,
+        title: "",
+        desc: ""
     },
     {
         id: 3,
-        title: "Value Three",
-        desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
+        image: value3,
+        title: "",
+        desc: ""
     },
     {
         id: 4,
-        title: "Value Four",
-        desc: "Placeat quidem facere dicta modi? Pariatur exercitationem illum."
+        image: value4,
+        title: "",
+        desc: ""
+    },
+    {
+        id: 5,
+        image: value5,
+        title: "",
+        desc: ""
     }
 ]
 
@@ -185,34 +203,47 @@ export const shop = [
     {
         id: 1,
         image: shop1,
-        dis: '20kg + 5kg dambel pack',
-        title: "dambels",
-        price: "39.99"
+        dis: '1.5kg gain weight powder',
+        title: "Suger Protein Powder",
+        price: "39.99",
+        size: "12x8x5 Inch (Pack of 1)",
+        color: "black"
     },
     {
         id: 2,
         image: shop2,
-        dis: "1.5kg whey protien powder",
-        title: "powder",
-        price: "22.99"
+        dis: "3kg pre wokout powder",
+        title: "Pre Workout Powder",
+        price: "22.99",
+        size: "12x8x5 Inch (Pack of 1)",
+        color: "black"
     },
     {
         id:3,
-        image: "",
-        title: "",
-        price: ""
+        image: shop3,
+        dis: "500gr vitamin pills",
+        title: "Multi Vitamin",
+        price: "9.99",
+        size: "12x8x5 Inch (Pack of 1)",
+        color: "black"
     },
     {
         id:4,
-        image: "",
-        title: "",
-        price: ""
+        image: shop3,
+        dis: "500gr vitamin pills",
+        title: "Multi Vitamin",
+        price: "9.99",
+        size: "12x8x5 Inch (Pack of 1)",
+        color: "black"
     },
     {
-        id:5,
-        image: "",
-        title: "",
-        price: ""
+        id:'shop5',
+        image: shop3,
+        dis: "500gr vitamin pills",
+        title: "Multi Vitamin",
+        price: "9.99",
+        size: "12x8x5 Inch (Pack of 1)",
+        color: "black"
     },
 ]
 
@@ -301,6 +332,9 @@ export const faqs = [
                 image: Trainer1,
                 name: 'John Doe',
                 job: 'Aerobic Trainer',
+                followers: '9k',
+                students: '2359',
+                year: '13',
                 socials: ['https://instagram.com/', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com/']
             },
             {
@@ -308,6 +342,9 @@ export const faqs = [
                 image: Trainer2,
                 name: 'Daniel vinyo',
                 job: 'Speed Trainer',
+                followers: '2k',
+                students: '1359',
+                year: '10',
                 socials: ['https://instagram.com/', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com/']
             },
             {
@@ -315,6 +352,9 @@ export const faqs = [
                 image: Trainer3,
                 name: 'Edem Quist',
                 job: 'Flexibility Trainer',
+                followers: '1k',
+                students: '59',
+                year: '1',
                 socials: ['https://instagram.com/', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com/']
             },
             {
@@ -322,6 +362,9 @@ export const faqs = [
                 image: Trainer4,
                 name: 'Shatta Wale',
                 job: 'Body Composition Trainer',
+                followers: '8k',
+                students: '1459',
+                year: '7',
                 socials: ['https://instagram.com/', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com/']
             },
             {
@@ -329,6 +372,9 @@ export const faqs = [
                 image: Trainer5,
                 name: 'Diana Ayi',
                 job: 'Circuit Trainer',
+                followers: '2k',
+                students: '459',
+                year: '3',
                 socials: ['https://instagram.com/', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com/']
             },
             {
@@ -336,6 +382,9 @@ export const faqs = [
                 image: Trainer6,
                 name: 'Wayne Carter',
                 job: 'Physical Intelligence Trainer',
+                followers: '4k',
+                students: '359',
+                year: '2',
                 socials: ['https://instagram.com/', 'https://twitter.com/', 'https://facebook.com/', 'https://linkedin.com/']
             }
         ]

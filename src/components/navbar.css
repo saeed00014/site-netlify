@@ -1,20 +1,22 @@
 .m-navbar {
+  position: fixed;
   display: flex;
   justify-content: center;
   width: 100vw;
   height: 70px;
   background-color: var(--background-color);
   overflow-x: visible;
+  z-index: 100;
 }
 
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 100%;
-  max-width: 1300px;
+  max-width: 1520px;
   background-color: var(--background-color);
   z-index: 2;
 }
@@ -23,33 +25,25 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  width: 20%;
+  width: 15%;
   background-color: var(--background-color);
   z-index: 3;
 }
 
-.logo-image {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  width: 90%;
-  background-color: var(--background-color);
-}
-
-.logo img{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  object-fit: cover;
-  background-color: var(--background-color);
+.logo span {
+  font-size: 2.2rem;
+  background-image: linear-gradient(to right, white, red 130%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .navbar-right {
   display: none;
   align-items: center;
   justify-content: right;
-  width: 50%;
+  width: 70%;
   gap: 2rem;
 }
 
@@ -57,8 +51,8 @@
   display: flex;
   align-items: center;
   justify-content: right;
-  margin-right: -20px;
-  gap: 0.5rem;
+  width: 15%;
+  gap: 1rem;
   z-index: 6;
 }
 
@@ -69,7 +63,7 @@
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  width: 70%;
+  width: 40%;
   padding-right: 0;
   background-color: var(--background-color);
 }
@@ -78,10 +72,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5.8rem;
+  width: 5rem;
   height: 2.6rem;
   border-bottom: 1px solid var(--main-text);
-  background-color: var(--color-primary);
+  background-color: var(--background-color);
   color: var(--main-text);
   cursor: pointer;
   font-size: 1.2rem;
@@ -93,25 +87,43 @@
   justify-content: center;
   align-items: center;
   width: 5.8rem;
-  height: 2.6rem;
-  border-bottom: 1px solid var(--main-text);
-  background-color: var(--color-primary);
+  height: 4.4rem;
+  background-color: var(--background-color);
   color: var(--main-text);
   cursor: pointer;
   font-size: 1.4rem;
-  z-index: 4;
 }
 
-.signup-btn,
 .signup-btn1 {
-  width: 5.8rem;
-  height: 2.6rem;
-  border-radius: 1.4rem;
-  background-color: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  gap: 1rem;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--main-text);
   color: var(--main-text);
-  cursor: pointer;
-  font-size: 1.2rem;
+  background-color: var(--background-color);
 }
+
+.signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 35px;
+  gap: 1rem;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--main-text);
+  color: var(--main-text);
+  background-color: var(--background-color);
+}
+
 .nav__links li a:hover {
   color: red;
 }
@@ -137,16 +149,6 @@
   transform: rotate(45deg);
 }
 
-.page-parts:hover,
-.page-parts:hover .nav-active a {
-  display: flex;
-  background-color: var(--alike-color);
-  color: red;
-}
-
-.page-parts:hover a {
-  color: var(--main-text);
-}
 
 /*go top*/
 
@@ -173,7 +175,8 @@
     position: relative;
     display: flex;
     height: 60px;
-    width: 100vw;
+    width: 90%;
+    max-width: 1170px;
   }
 
   .logo-image img{
@@ -192,6 +195,7 @@
   .navbar-right {
     display: flex;
     width: 60%;
+    gap: 2rem;
   }
 
   .navbar-right-big-pic {
@@ -228,7 +232,7 @@
   }
 
   .hide__list {
-    right: -20%;
+    right: -30%;
     transition: all 0.4s;
   }
 
@@ -261,6 +265,7 @@
     height: 80px;
     background-color: var(--color-primary);
     color: var(--main-text);
+    border-bottom: 1px solid var(--main-text);
     cursor: pointer;
   }
   
@@ -277,6 +282,11 @@
 
   .page-parts {
     display: none;
+  }
+
+  .signup-btn,
+  .signup-btn1 {
+    padding-top: 10px;
   }
  
 }
@@ -304,7 +314,7 @@
   .navbar-right {
     display: flex;
     width: 70%;
-    gap: 0.5rem;
+    gap: .7rem;
     z-index: 3;
   }
 
@@ -354,7 +364,7 @@
   }
 
   .hide__list {
-    right: -50%;
+    right: -70%;
     transition: all 0.9s;
   }
 
@@ -389,6 +399,7 @@
     height: 80px;
     background-color: var(--color-primary);
     color: var(--main-text);
+    border-bottom: 1px solid var(--main-text);
     cursor: pointer;
   }
   
@@ -401,6 +412,10 @@
     height: 5rem;
     font-size: 2rem;
     padding-left: 1.5rem;
+  }
+
+  .signup-btn {
+    padding-top: 10px;
   }
 
   .page-parts {

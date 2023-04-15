@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
+  gap: 3rem;
 }
 
 form {
@@ -10,11 +11,11 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 450px;
   max-width: 450px;
   height: 100%;
   gap: 1rem;
-  margin: 3rem 0 5rem 0;
+  margin: 7rem 0 5rem 0;
   border-radius: .5rem;
   padding: 1rem 0 2rem 0;
   background-color: var(--background-color);
@@ -60,8 +61,17 @@ form a {
   display: none;
 }
 
-.input-container input:invalid ~ span {
+.input-container input:invalid[unset='true'] ~ span {
   display: block;
+}
+
+.acount-made {
+  display: none;
+  color: var(--main-text);
+}
+
+.acount-made[success='true'] {
+  display: flex;
 }
 
 @media only screen and (min-width:0) and (max-width:650px) {

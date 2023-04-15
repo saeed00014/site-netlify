@@ -1,34 +1,80 @@
-import image from '../images/values.jpg'
-import { FaGem } from 'react-icons/fa/index.esm.js'
+import { useState } from 'react'
+
 import { values } from '../data.js'
-import { FaReact } from 'react-icons/fa/index.esm.js'
 
 const Values = () => {
+  const [index, setIndex] = useState(2)
+  const [index1, setIndex1] = useState(0)
+  const [index2, setIndex2] = useState(1)
+ 
+  const val = [
+    {
+      id: 1,
+      value: values[index].image
+    },
+    {
+      id: 2,
+      value: values[index1].image
+    },
+    {
+      id: 3,
+      value: values[index2].image
+    },
+    {
+      id: 4,
+      value: values[3].image
+    },
+    {
+      id: 5,
+      value: values[4].image
+    }
+  ]
+
+  const HandleClickright = () => {
+    if (index === 1) {
+      setIndex(0)
+      setIndex1(1)
+      setIndex2(2)
+    }else if (index === 2) {
+      setIndex(0)
+      setIndex1(1)
+      setIndex2(2)
+    }else {
+      setIndex(1)
+      setIndex1(2)
+      setIndex2(0)
+    }
+  }
+
+  const HandleClickleft = () => {
+    if (index === 1) {
+      setIndex(0)
+      setIndex1(1)
+      setIndex2(2)
+    }else if (index === 2) {
+      setIndex(1)
+      setIndex1(2)
+      setIndex2(0)
+    }else {
+      setIndex(2)
+      setIndex1(0)
+      setIndex2(1)
+    }
+  }
+  
+
   return (
-    <section id='values' className="main__values-container">
-      <div className="left__value-container">
-        <img src={image} alt="aa" />
-      </div>
-      <div className="right__value-container">
+    <section id='values' className="values">
+      <div className="value-container">
         <div className="value-icon">
-          <div className='bsgem-icon'>
-            <FaGem className='fagem'/>
-            <p>Values</p>
-          </div>
-          <p className='m-p'>This is the day that the lord has made. We will rejoiceThis is the day that the lord has made. We will rejoice</p>
+          <p className='m-p'>See What We Have To Offer In BODYMAKE Our Equipments and Products</p>
         </div>
         <div className="value__card-container">
-        {
-        values.map((val) =>{ 
-          return (
-            <div key={val.id} className="value-card">
-              <span className='fareact-value'><FaReact id='fa-react'/></span>
-              <h2>{val.title}</h2>
-              <p>{val.desc}</p>
-            </div>
-          )
-        })
-        }
+          {val.map((v) => {
+            return <img src={v.value} alt="" />
+          })}
+          <button onClick={HandleClickleft} className='l-btn'></button>
+          <button onClick={HandleClickleft} className='r-btn'></button>
         </div>
       </div>
     </section>

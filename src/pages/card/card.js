@@ -1,11 +1,10 @@
 import './card.css'
-import Axios from 'axios'
-
-import { HiOutlineX } from "react-icons/hi/index.esm.js";
 
 import { useCardsContext } from '../../hooks/useCardsContext.js'
 
 import { useEffect, useState } from 'react';
+
+import { shop } from '../../data.js'
 
 const Card = () => {
 
@@ -49,37 +48,87 @@ const Card = () => {
       document.location.reload();
     }
   }
-  
 
+  let [Qty, setQty] = useState('')
+  
+  const HandelSelect = (e, price) => {
+    let q = e.target.value
+    let t = price
+    const c = q * t
+    console.log(c)
+  }
+  const HandelPrice = (price) => {
+    let fp = price * Qty
+    console.log(Qty)
+    return (fp).toFixed(2)
+  }
   return (
-    <section>
-      <div className="card-container">
-        <div className="card__content-container">
+    <section className='scard'>
+      <div className="scard-container">
+        <div className="scard__content-container">
           {card.map((product) => {
             return (
-              <div key={product._id} className="card-content">
-                <div className='card-part'>
-                  <div className='card-del'>
-                    <h4>you are buying</h4>
-                    <HiOutlineX onClick={() => handleClick(product._id)} id='x-card'/>
+              <div key={product._id} className="scard-content">
+                  <div className='scard-top'>
+                    <h1>Shopping Cart</h1>
+                    <div><small>price</small></div>
                   </div>
-                  <div className="card-body">
-                    <div className="card-img">
+                  <div className="scard-body">
+                    <div className="scard-img">
                       <img src={product.image} alt="" />
                     </div>
-                    <div className="card-details">
-                      <h2>{product.title}</h2>
+                    <div className="scard-details">
+                      <div className='top-details'>
+                        <h3>{product.title}</h3>
+                        <h3>{product.price}$</h3>
+                      </div>
                       <p>{product.dis}</p>
-                      <h3>{product.price}</h3>
+                      <div className="middle-details1">
+                        <h4>size: {product.size}</h4>
+                        <h4>color: {product.color}</h4>
+                      </div>
+                      <div className='middle-details2'>
+                        <select onClick={(e) => HandelSelect(e, product.price)} name="Qty" id="">
+                          <option value="1">Qty: 1</option>
+                          <option value="2">Qty: 2</option>
+                          <option value="3">Qty: 3</option>
+                          <option value="4">Qty: 4</option>
+                          <option value="5">Qty: 5</option>
+                        </select>
+                        <h5 onClick={() => handleClick(product._id)}>Delete</h5>
+                      </div>
                     </div>
                   </div>
-                </div>
+                  <div className="scard-bottom">
+                   <h3>Subtotal ({} items): {Qty}$</h3>
+                  </div>
               </div>
             )
           })}
         </div>
+        <div className="right-scard">
+          <div className="pricehandler-content"> 
+            <div className="pricehandler-top">
+              <h3>Subtotal ({} items): {}$</h3>
+            </div>
+            <button>proceed to checkout( item)</button>       
+          </div>
+          <h3>you might wanna teke a look at this items aswell</h3>
+          {shop.map((product) => {
+            return (         
+            <div className="suggestions">          
+              <img src={product.image} alt="" />            
+              <div className="suggestions-text">           
+                <h3>{product.title}</h3>           
+                <p>{product.dis}</p>           
+                <h4>{product.price}</h4>           
+                <button>Add to Cart</button>            
+              </div>           
+            </div>
+            )
+          })}
+        </div>
       </div>
-      <button className='complete-p'>complete your purchace</button>
     </section>
   )  
 }

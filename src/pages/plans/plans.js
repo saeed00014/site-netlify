@@ -37,8 +37,8 @@ const Plans = () => {
   }
 
   return (
-    <section>
-      <Header title='Our Produts' image={image} text='We Give You The Best Servece At Lowest Price'/>
+    <section className='plans'>
+      <Header image={image} title='Start Training' text='Our Tested Plans with 100% Garentee and Lowest price'/>
       <div className="plans-container">
         <div className="plans-content">
           {plans.map((plan) => {
