@@ -9,15 +9,17 @@ import Testimonial from "../../components/Testimonial.js"
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <Header />
-      <Programs />
-      <Values />
-      <Shop />
-      <About />
-      <FAQ />
-      <Testimonial />
-    </div>
+    <section className="home">
+      <div className="home-container">
+        <Header />
+        <Programs />
+        <Values />
+        <Shop />
+        <About />
+        <FAQ />
+        <Testimonial />
+      </div>
+    </section>
   )
 }
 
