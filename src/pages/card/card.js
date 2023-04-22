@@ -40,7 +40,7 @@ const Card = () => {
 
   const handleDel = async (product) => {
     dispatch(deleteCard(product))
-    const response = await fetch('http://localhost:10000/card/' + product._id, {
+    const response = await fetch('https://dull-red-chick-wrap.cyclic.app/card/' + product._id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
