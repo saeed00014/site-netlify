@@ -95,8 +95,8 @@ const Card = () => {
                       <div className='middle-details2'>
                         <div className='qty'>
                           <button onClick={() => handleDe(product)} className='qty-btn1'><BiChevronLeft/></button>
-                          <h4>Qty: {product.cardQuantity}</h4> 
                           <button onClick={() => handleIn(product)} className='qty-btn2'><BiChevronRight/></button> 
+                          <h4>Qty: {product.cardQuantity}</h4> 
                         </div>
                         <p>{product.limitations}</p>
                         <h5 onClick={() => handleDel(product)}>Delete</h5>
@@ -125,7 +125,7 @@ const Card = () => {
               <div className="suggestions-text">           
                 <h3>{product.title}</h3>           
                 <p>{product.dis}</p>           
-                <h4>{product.price}</h4>           
+                <h4>{product.price}$</h4>           
                 <button onClick={() => handleAd(product)}>Add to Cart</button>            
               </div>           
             </div>

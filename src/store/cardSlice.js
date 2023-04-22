@@ -108,7 +108,6 @@ const cardSlice  = createSlice ({
     }
 }})
 
-  
 export const { addCard, decreaseCard, increaseCard, deleteCard, getTotals } =
   cardSlice.actions;
 
