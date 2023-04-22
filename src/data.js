@@ -201,7 +201,7 @@ export const values = [
 
 export const shop = [
     {
-        id: 1,
+        id: '1',
         image: shop1,
         dis: '1.5kg gain weight powder',
         title: "Suger Protein Powder",
@@ -210,29 +210,11 @@ export const shop = [
         color: "black"
     },
     {
-        id: 2,
+        id: '2',
         image: shop2,
         dis: "3kg pre wokout powder",
         title: "Pre Workout Powder",
         price: "22.99",
-        size: "12x8x5 Inch (Pack of 1)",
-        color: "black"
-    },
-    {
-        id:3,
-        image: shop3,
-        dis: "500gr vitamin pills",
-        title: "Multi Vitamin",
-        price: "9.99",
-        size: "12x8x5 Inch (Pack of 1)",
-        color: "black"
-    },
-    {
-        id:4,
-        image: shop3,
-        dis: "500gr vitamin pills",
-        title: "Multi Vitamin",
-        price: "9.99",
         size: "12x8x5 Inch (Pack of 1)",
         color: "black"
     },
@@ -246,9 +228,6 @@ export const shop = [
         color: "black"
     },
 ]
-
-
-
 
 
 export const faqs = [

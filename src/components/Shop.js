@@ -1,21 +1,24 @@
 import '../pages/home/home.css'
 
 import React from 'react'
-import { useCardsContext } from '../hooks/useCardsContext.js'
 import { Link } from 'react-router-dom'
 
 import  { shop } from '../data.js'
 import { HashLink } from 'react-router-hash-link'
 
+import { useDispatch } from 'react-redux'
+import { addCard } from '../store/cardSlice.js'
+
 const Shop = () => {
-  const { dispatch } = useCardsContext()
+  const dispatch = useDispatch()
 
-  const handleClick = async (image, dis, title, price, size, color) => {
+  const handleClick = async (id, image, dis, title, price, size, color) => {
 
-    const card = {image, dis, title, price, size, color}
+    const card = {id, image, dis, title, price, size, color}
     console.log(JSON.stringify(card))
 
-    const response = await fetch('https://dull-red-chick-wrap.cyclic.app/card', {
+
+    const response = await fetch('http://localhost:10000/card', {
       method: 'POST',
       body: JSON.stringify(card),
       headers: {
@@ -29,10 +32,8 @@ const Shop = () => {
     })
     console.log(response.url)
     const json = await response.json()
-
-    if(response.ok) {
-      dispatch({type: 'CREATE_WORKOUT', payload: json})
-    }
+    console.log(json)
+    dispatch(addCard(json))
   }
 
   return (
@@ -52,7 +53,7 @@ const Shop = () => {
                   <img className='img-shop' src={details.image} alt="" />
                   <div className="shop-description">
                     <h3>{details.title}</h3>
-                    <Link onClick={() => handleClick(details.image, details.dis, details.title, details.price, details.size, details.color)} to="/card">
+                    <Link onClick={() => handleClick(details.id, details.image, details.dis, details.title, details.price, details.size, details.color)} to="/card">
                     <button className='addcard-btn'>Add Card</button>
                     </Link>
                   </div>

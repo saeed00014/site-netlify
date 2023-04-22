@@ -2,15 +2,12 @@ import './plans.css'
 
 import { Link } from 'react-router-dom'
 
-import { useCardsContext } from '../../hooks/useCardsContext.js'
-
 import { plans } from '../../data.js'
 import {TiTickOutline} from 'react-icons/ti/index.esm.js'
 import Header from "../../components/Header-back.js"
 import image from '../../images/header_bg_4.jpg'
 
 const Plans = () => {
-  const { dispatch } = useCardsContext()
 
   const handleClick = async (image, dis, title, price) => {
 
@@ -30,10 +27,6 @@ const Plans = () => {
       }
     })
     const json = await response.json()
-
-    if(response.ok) {
-      dispatch({type: 'CREATE_WORKOUT', payload: json})
-    }
   }
 
   return (

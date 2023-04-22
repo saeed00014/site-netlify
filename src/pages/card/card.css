@@ -109,20 +109,47 @@
   cursor: pointer;
 }
 
-.middle-details2 select {
-  background-color: rgb(221, 221, 221);
-  height: 30px;
-  width: 70px;
-  padding: 0 5px;
-  border-radius: 10px;
+.middle-details2 div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(71, 71, 71);
 }
 
-.middle-details2 select:hover {
-  background-color: rgb(196, 196, 196);
+.middle-details2 h4 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 35px;
+  background-color: rgb(199, 199, 199);
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.middle-details2 button {
+  display: flex;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.qty-btn2 {
+  justify-content: end;
 }
 
 .scard-details div h2 {
   color: var(--background-color);
+}
+
+.middle-details2 p {
+  color: red;
 }
 
 .scard-img img {

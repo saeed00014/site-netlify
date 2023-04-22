@@ -1,36 +1,20 @@
 import './card.css'
+import { shop } from '../../data.js'
+import { addCard, decreaseCard, deleteCard, getTotals, increaseCard } from '../../store/cardSlice.js';
+import cardSlice from '../../store/cardSlice.js';
+import { useDispatch, useSelector } from "react-redux";
 
-import { useCardsContext } from '../../hooks/useCardsContext.js'
-
+import { BiChevronLeft } from 'react-icons/bi/index.esm.js'
+import { BiChevronRight } from 'react-icons/bi/index.esm.js'
 import { useEffect, useState } from 'react';
 
-import { shop } from '../../data.js'
-
 const Card = () => {
-
-  const[card, setCards] = useState([])
-
-  useEffect(() => {
-    const fetchCards = async () => {
-      const res = await fetch('https://dull-red-chick-wrap.cyclic.app/card' ,{
-        header: {
-          "Access-Control-Allow-Origin" : "*", 
-          "Access-Control-Allow-Credentials" : true,
-          "Access-Control-Expose-Headers": "*",
-          "Access-Control-Allow-Methods": "*" 
-        }
-      })
-      
-      const json = await res.json()
-      setCards(json)
-    }
-    fetchCards()
-  }, [])
-
-  const { dispatch } = useCardsContext()
+  
+  const card = useSelector((state) => state.card)
+  console.log(card.cardItems[0])
 
   const handleClick = async (id) => {
-    const response = await fetch('https://dull-red-chick-wrap.cyclic.app/card/' + id, {
+    const response = await fetch('http://localhost:10000/card/' + id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -42,31 +26,52 @@ const Card = () => {
       }
     })
     const json = await response.json()
-
-    if (response.ok) {
-      dispatch({type: 'DELETE_CARD', payload: json})
-      document.location.reload();
-    }
   }
 
-  let [Qty, setQty] = useState('')
+  const dispatch = useDispatch()
+
+  const handleDe = (product) => {
+    dispatch(decreaseCard(product))
+  }
   
-  const HandelSelect = (e, price) => {
-    let q = e.target.value
-    let t = price
-    const c = q * t
-    console.log(c)
+  const handleIn = (product) => {
+    dispatch(increaseCard(product))
   }
-  const HandelPrice = (price) => {
-    let fp = price * Qty
-    console.log(Qty)
-    return (fp).toFixed(2)
+
+  const handleDel = async (product) => {
+    dispatch(deleteCard(product))
+    const response = await fetch('http://localhost:10000/card/' + product._id, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        "Access-Control-Allow-Origin" : "*", 
+        "Access-Control-Allow-Credentials" : true,
+        "Access-Control-Expose-Headers": "*",
+        "Access-Control-Allow-Methods": "*" 
+      }
+    })
   }
+
+  const handleAd = (product) => {
+    dispatch(addCard(product))
+  }
+
+  const handlePrice = (price) => {
+    price = Math.floor(price * 100) / 100;
+    return price.toFixed(2)
+  }
+
+  useEffect(() => {
+    dispatch(getTotals())
+  }, [card, dispatch])
+
   return (
     <section className='scard'>
       <div className="scard-container">
         <div className="scard__content-container">
-          {card.map((product) => {
+          {card.cardItems &&
+            card.cardItems.map((product) => {
             return (
               <div key={product._id} className="scard-content">
                   <div className='scard-top'>
@@ -88,19 +93,18 @@ const Card = () => {
                         <h4>color: {product.color}</h4>
                       </div>
                       <div className='middle-details2'>
-                        <select onClick={(e) => HandelSelect(e, product.price)} name="Qty" id="">
-                          <option value="1">Qty: 1</option>
-                          <option value="2">Qty: 2</option>
-                          <option value="3">Qty: 3</option>
-                          <option value="4">Qty: 4</option>
-                          <option value="5">Qty: 5</option>
-                        </select>
-                        <h5 onClick={() => handleClick(product._id)}>Delete</h5>
+                        <div className='qty'>
+                          <button onClick={() => handleDe(product)} className='qty-btn1'><BiChevronLeft/></button>
+                          <h4>Qty: {product.cardQuantity}</h4> 
+                          <button onClick={() => handleIn(product)} className='qty-btn2'><BiChevronRight/></button> 
+                        </div>
+                        <p>{product.limitations}</p>
+                        <h5 onClick={() => handleDel(product)}>Delete</h5>
                       </div>
                     </div>
                   </div>
                   <div className="scard-bottom">
-                   <h3>Subtotal ({} items): {Qty}$</h3>
+                   <h3>Subtotal ({product.cardQuantity} item): {handlePrice(product.cardQuantity * product.price)}$</h3>
                   </div>
               </div>
             )
@@ -109,11 +113,11 @@ const Card = () => {
         <div className="right-scard">
           <div className="pricehandler-content"> 
             <div className="pricehandler-top">
-              <h3>Subtotal ({} items): {}$</h3>
+              <h3>Subtotal ({card.cardTotalQuantity} item{card.cardTotalQuantity > 1 && 's'}): {card.cardTotalPrice}$</h3>
             </div>
-            <button>proceed to checkout( item)</button>       
+            <button>proceed to checkout({card.cardTotalQuantity} item{card.cardTotalQuantity > 1 && 's'})</button>       
           </div>
-          <h3>you might wanna teke a look at this items aswell</h3>
+          <h3>Check our Suggested Products</h3>
           {shop.map((product) => {
             return (         
             <div className="suggestions">          
@@ -122,7 +126,7 @@ const Card = () => {
                 <h3>{product.title}</h3>           
                 <p>{product.dis}</p>           
                 <h4>{product.price}</h4>           
-                <button>Add to Cart</button>            
+                <button onClick={() => handleAd(product)}>Add to Cart</button>            
               </div>           
             </div>
             )
