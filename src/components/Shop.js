@@ -16,6 +16,7 @@ const Shop = () => {
 
     const card = {id, image, dis, title, price, size, color}
     console.log(JSON.stringify(card))
+    dispatch(addCard(card))
     
     
     const response = await fetch('https://dull-red-chick-wrap.cyclic.app/card', {
@@ -32,7 +33,6 @@ const Shop = () => {
     })
     console.log(response.url)
     const json = await response.json()
-    dispatch(addCard(json))
     console.log(json)
   }
 
