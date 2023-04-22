@@ -104,7 +104,7 @@ const Card = () => {
                     </div>
                   </div>
                   <div className="scard-bottom">
-                   <h3>Subtotal ({product.cardQuantity} item): {handlePrice(product.cardQuantity * product.price)}$</h3>
+                   <h3>Subtotal ({product.cardQuantity} item{card.cardQuantity > 1 && 's'}): {handlePrice(product.cardQuantity * product.price)}$</h3>
                   </div>
               </div>
             )
