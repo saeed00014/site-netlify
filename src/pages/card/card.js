@@ -73,7 +73,7 @@ const Card = () => {
           {card.cardItems &&
             card.cardItems.map((product) => {
             return (
-              <div key={product._id} className="scard-content">
+              <div key={product.id} className="scard-content">
                   <div className='scard-top'>
                     <h1>Shopping Cart</h1>
                     <div><small>price</small></div>
@@ -89,14 +89,23 @@ const Card = () => {
                       </div>
                       <p>{product.dis}</p>
                       <div className="middle-details1">
-                        <h4>size: {product.size}</h4>
-                        <h4>color: {product.color}</h4>
+                        <h4>{product.size && `size: ${product.size}`}</h4>
+                        <h4>{product.color && `color: ${product.color}`}</h4>
                       </div>
                       <div className='middle-details2'>
                         <div className='qty'>
-                          <button onClick={() => handleDe(product)} className='qty-btn1'><BiChevronLeft/></button>
-                          <button onClick={() => handleIn(product)} className='qty-btn2'><BiChevronRight/></button> 
-                          <h4>Qty: {product.cardQuantity}</h4> 
+                          {
+                            product.size &&
+                            <>
+                              <button onClick={() => handleDe(product)} className='qty-btn1'><BiChevronLeft/></button>
+                              <button onClick={() => handleIn(product)} className='qty-btn2'><BiChevronRight/></button> 
+                            </>
+                          }
+                          { 
+                            product.size ?
+                            <h4 className='h4-det'>Qty: {product.cardQuantity}</h4> :
+                            <h4 className='h4-pack'>Qty: 1</h4> 
+                          }
                         </div>
                         <p>{product.limitations}</p>
                         <h5 onClick={() => handleDel(product)}>Delete</h5>
@@ -104,7 +113,7 @@ const Card = () => {
                     </div>
                   </div>
                   <div className="scard-bottom">
-                   <h3>Subtotal ({product.cardQuantity} item{card.cardQuantity > 1 && 's'}): {handlePrice(product.cardQuantity * product.price)}$</h3>
+                   <h3>Subtotal ({product.cardQuantity} item{product.cardQuantity > 1 && 's'}): {handlePrice(product.cardQuantity * product.price)}$</h3>
                   </div>
               </div>
             )
@@ -120,7 +129,7 @@ const Card = () => {
           <h3>Check our Suggested Products</h3>
           {shop.map((product) => {
             return (         
-            <div className="suggestions">          
+            <div key={product.id} className="suggestions">          
               <img src={product.image} alt="" />            
               <div className="suggestions-text">           
                 <h3>{product.title}</h3>           

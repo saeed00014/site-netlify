@@ -6,7 +6,7 @@
   gap: 3rem;
 }
 
-form {
+.form-sign {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,7 +48,7 @@ form {
   background-color: var(--color-primary);
 }
 
-form a {
+.form-sign a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ form a {
 }
 
 @media only screen and (min-width:0) and (max-width:650px) {
-  form {
+  .form-sign {
     width: 90%;
   }
 

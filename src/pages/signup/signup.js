@@ -76,13 +76,13 @@ const Signup = () => {
 
   return (
     <div className="form-container">
-      <form onSubmit={HandleClickSignin}>
+      <form className='form-sign' onSubmit={HandleClickSignin}>
         <h1>Signin</h1>
         <FormInput refer= {usernameRef} id='name' topic='username' type='text' placeholder='username'/>
         <FormInput refer= {passwordRef} id='password' topic='password' type='password' placeholder='password' errorMessage='username or password is wrong'/>
         <FormInput id='submit' topic='' type='submit'/>
       </form>
-      <form onSubmit={HandleClickSignup}>
+      <form className='form-sign' onSubmit={HandleClickSignup}>
         <h1>Signup</h1>
         <FormInput
           refer= {usernameRef}

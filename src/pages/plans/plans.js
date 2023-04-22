@@ -6,13 +6,17 @@ import { plans } from '../../data.js'
 import {TiTickOutline} from 'react-icons/ti/index.esm.js'
 import Header from "../../components/Header-back.js"
 import image from '../../images/header_bg_4.jpg'
+import { useDispatch } from "react-redux";
+import { addCard } from '../../store/cardSlice.js'
 
 const Plans = () => {
+  const dispatch = useDispatch()
 
-  const handleClick = async (image, dis, title, price) => {
+  const handleClick = async (id, image, dis, title, price, features) => {
 
-    const card = {image, dis, title, price}
+    const card = {id, image, dis, title, price, features}
     console.log(JSON.stringify(card))
+    dispatch(addCard(card))
 
     const response = await fetch('https://dull-red-chick-wrap.cyclic.app/card', {
       method: 'POST',
@@ -37,7 +41,7 @@ const Plans = () => {
           {plans.map((plan) => {
             const features = plan.features
             return (
-              <div key={plan.id} className="plan-content">
+              <div key={plan.title} className="plan-content">
                 <h1>{plan.title}</h1>
                 <small>{plan.dis}</small>
                 <h1 id='price'>{`$${plan.price}`}<p>/mo</p></h1> 
@@ -52,7 +56,7 @@ const Plans = () => {
                 })}
                 <div className='buy-btn'>
                   <span id='tick'></span>
-                  <Link onClick={() => handleClick(plan.image, plan.dis, plan.title, plan.price)} to="/card">
+                  <Link onClick={() => handleClick(plan.id, plan.image, plan.dis, plan.title, plan.price, plan.features)} to="/card">
                     <button>Buy The Plan</button>
                   </Link>
                 </div>

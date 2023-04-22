@@ -119,7 +119,7 @@ export const programs = [
             ]
         },
         {
-            id: 2,
+            id: 1,
             title: 'Silver Package',
             image: package1,
             dis: 'This is the perfect package for beginners',
@@ -138,7 +138,7 @@ export const programs = [
             ]
         },
         {
-            id: 3,
+            id: 1,
             title: 'Gold Package',
             image: package2,
             dis: 'This package is perfect for more exprienced athletes',
@@ -230,6 +230,8 @@ export const shop = [
 ]
 
 
+
+
 export const faqs = [
     {
         id: 1,
@@ -272,35 +274,45 @@ export const faqs = [
             name: "Diana Ayi",
             quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsam facere ea a laboriosam sed? Quod vel voluptates a! Maxime minima cumque aut? In expedita numquam consectetur non officia iusto.",
             job: "Student",
-            avatar: ava1
+            avatar: ava1,
+            like: 0,
+            dislike: 0
         },
         {
             id: 2,
             name: "Daniel Vinyo",
             quote: "Harum quaerat hic consequuntur molestias repellat ad quo tenetur vitae rem, labore quisquam? Atque, assumenda rerum this and that odit harum quaerat hic praesentium quisquam quae, enim iste ipsam id repellat.",
             job: "Software Egineer",
-            avatar: ava2
+            avatar: ava2,
+            like: 0,
+            dislike: 0
         },
         {
             id: 3,
             name: "Edem Quist",
             quote: "Quaerat hic praesentium consequuntur molestias repellat ad quo tenetur vitae rem, labore quisquam? Atque, assumenda rerum odit harum quaerat hic praesentium quisquam quae, enim iste ipsam id repellat.",
             job: "University Lecturer",
-            avatar: ava3
+            avatar: ava3,
+            like: 0,
+            dislike: 0
         },
         {
             id: 4,
             name: "Grace Lavoe",
             quote: "Cupiditate deleniti sint consequuntur molestias repellat ad quo tenetur vitae rem, labore quisquam? Atque, assumenda rerum odit harum quaerat hic praesentium quisquam quae, enim iste ipsam id repellat.",
             job: "Talking Parrot",
-            avatar: ava4
+            avatar: ava4,
+            like: 0,
+            dislike: 0
         },
         {
             id: 5,
             name: "Nana Yaa Dankwa",
             quote: "Maxime minima cumque sit amet consectetur adipisicing elit. Praesentium ipsam facere ea a laboriosam sed? Quod vel voluptates a! Maxime minima cumque aut? In expedita numquam consectetur non officia iusto.",
             job: "Pharmacist",
-            avatar: ava5
+            avatar: ava5,
+            like: 0,
+            dislike: 0
         }
     ]
 

@@ -17,11 +17,10 @@ const cardSlice  = createSlice ({
       const newItem = action.payload
       const exitingIndex = state.cardItems.findIndex(
         (item) => item.id === newItem.id
-        )
-        console.log(newItem.id)
-        state.cardTotalPrice = state.cardTotalPrice + newItem.price
-
-      if(exitingIndex >= 0 && state.cardItems[exitingIndex].cardQuantity <= 4) {
+      )
+      // everything is the same at shop and plans
+      // features is to handle plans Quatnity only plans have it
+      if(!newItem.features && exitingIndex >= 0 && state.cardItems[exitingIndex].cardQuantity <= 4) {
         state.cardItems[exitingIndex] = {
           ...state.cardItems[exitingIndex],
             cardQuantity: state.cardItems[exitingIndex].cardQuantity + 1
@@ -31,7 +30,7 @@ const cardSlice  = createSlice ({
           ...state.cardItems[exitingIndex],
             limitations: 'limited to Five'
         } 
-      }else {
+      }else if(exitingIndex < 0) {
         const item = { ...newItem, cardQuantity: 1 }
         state.cardItems.push(item)
       }
