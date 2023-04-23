@@ -1,5 +1,4 @@
 import {createSlice} from '@reduxjs/toolkit'
-import { fetchData } from './initialCard.js'
 
 const initialState = {
   cardItems: localStorage.getItem("cardItems")
