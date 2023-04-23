@@ -71,9 +71,45 @@
 }
 
 @media screen and (min-width:650px) and (max-width:1000px){
+  .about1 {
+    flex-direction: column;
+  }
 
+  .about-pic {
+    width: 100%;
+  }
+
+  .about-pic img {
+    object-fit: cover;
+    max-height: 300px;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
 }
 
 @media screen and (max-width:650px) {
+  .about1 {
+    flex-direction: column;
+  }
 
+  .about-pic {
+    width: 100%;
+  }
+
+  .about-pic img {
+    object-fit: cover;
+    max-height: 200px;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 1rem 1rem;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+  }
 }

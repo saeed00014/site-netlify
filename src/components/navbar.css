@@ -95,6 +95,75 @@
   font-size: 1.4rem;
 }
 
+.show__list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  top: 70px;
+  bottom: -400px;
+  right: -350px;
+  width: 300px;
+  list-style: none;
+  background-color: var(--alike-color);
+  transition: all .3s ease;
+}
+ 
+.show__list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+.show__list li a{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+  padding: 1.5rem;
+  color: white;
+ }
+ 
+ .show__list li:hover {
+  background-color: var(--golden-color);
+ }
+
+ .hide__list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  top: 70px;
+  bottom: -400px;
+  right: -350px;
+  list-style: none;
+  background-color: var(--alike-color);
+ }
+
+.nav-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-active::after {
+  content: '';
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: var(--background-color);
+  position: absolute;
+  margin-top: 4.5rem;
+  transform: rotate(45deg);
+}
+
 .signup-btn1 {
   display: flex;
   justify-content: center;
@@ -133,22 +202,6 @@
   display: none;
 }
 
-.nav-active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-active::after {
-  content: '';
-  display: block;
-  width: 1.2rem;
-  height: 1.2rem;
-  background: var(--background-color);
-  position: absolute;
-  margin-top: 4.5rem;
-  transform: rotate(45deg);
-}
 
 
 /*go top*/
@@ -219,66 +272,17 @@
   }
 
   .nav__links {
-    position: absolute;
-    right: -100%;
-    top: 70px;
-    display: flex;
-    flex-direction: column;
-    background: none;
-    justify-content: center;
-    align-items: end;
-    margin-right: 25px;
-    width: 200px;
-    z-index: 11111;
-  }
-
-  .hide__list {
-    right: -30%;
-    transition: all 0.4s;
+    display: none;
   }
 
   .show__list {
-    right: 0;
-    transition: all 0.7s;
-  }
-
-  .nav-active::after {
-    display: none;
+    right: -50px;
+    transition: all .6s ease;
   }
   
-  .hide__list li{
-    transform: rotate3d(-6, 0, 0, 90deg);
-    transition: all 0.4s ease;
-  }
-
-  .show__list li{   
-    border-bottom: 1px solid;    
-    transform: rotate3d(1, 1, 0, 0deg);
-    transition: all 0.4s ease;
-    transition-delay: calc(60ms * var(--i));
-  }
-
-  .nav__links li a{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 180px;
-    height: 80px;
-    background-color: var(--color-primary);
-    color: var(--main-text);
-    border-bottom: 1px solid var(--main-text);
-    cursor: pointer;
-  }
-  
-  .nav__links li {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    background-color: var(--color-primary);
-    width: 200px;
-    height: 5rem;
-    font-size: 2rem;
-    padding-left: 1.5rem;
+  .hide__list {
+    right: -350px;
+    transition: all .6s ease;
   }
 
   .page-parts {
@@ -303,13 +307,20 @@
     width: 100vw;
   }
 
-  .logo-image img{
-    height: 35px;
-    width: 120px;
-  }
-
   .signup-btn1 {
     display: none;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 27%;
+    z-index: 2;
+  }
+
+  .logo span {
+    font-size: 1.8rem;
   }
 
   .navbar-right {
@@ -317,14 +328,6 @@
     width: 70%;
     gap: .7rem;
     z-index: 3;
-  }
-
-  .logo {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 27%;
-    z-index: 2;
   }
 
   .logo img {
@@ -351,68 +354,21 @@
   }
 
   .nav__links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    background: none;
-    justify-content: center;
-    align-items: end;
-    width: 200px;
-    margin-right: 0px;
-    z-index: 17;
-  }
-
-  .hide__list {
-    right: -70%;
-    transition: all 0.9s;
-  }
-
-  .show__list {
-    margin-right: 0;
-    padding-right: 0;
-    right: 0;
-    transition: all 0.8s;
-    z-index: 17;
-  }
-  
-  .nav-active::after {
     display: none;
   }
 
-  .hide__list li{
-    transform: rotate3d(-6, 0, 0, 90deg);
-    transition: all 0.4s;
-  }
-
-  .show__list li{   
-    border-bottom: 1px solid;    
-    transform: rotate3d(1, 1, 0, 0deg);
-    transition: all 0.8s ease;
-  }
-
-  .nav__links li a{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 180px;
-    height: 80px;
-    background-color: var(--color-primary);
-    color: var(--main-text);
-    border-bottom: 1px solid var(--main-text);
-    cursor: pointer;
+  .show__list {
+    right: -50px;
+    transition: all .6s ease;
   }
   
-  .nav__links li {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    background-color: var(--color-primary);
-    width: 200px;
-    height: 5rem;
-    font-size: 2rem;
-    padding-left: 1.5rem;
+  .hide__list {
+    right: -350px;
+    transition: all .3s ease;
+  }
+
+  .nav-active::after {
+    display: none;
   }
 
   .signup-btn {

@@ -25,14 +25,25 @@ const Navbar = () => {
   return (
     <nav id='nav' className='m-navbar'>
       <div className="container">
-        <Link to='/' onClick={() => setList(false)} className="logo">
+        <Link to='/' onClick={manages} className="logo">
           <span>BODYMAKE</span>
         </Link>
-        <ul className={`nav__links ${list ? 'show__list' : 'hide__list'}`}>
+        <ul className='nav__links'>
           {links.map(({name, path}, index) => {
             return (
               <li key={index} >
-                <NavLink onClick={() => manages(name)} to={path} className={({isActive}) => isActive ? "nav-active" : ""}>
+                <NavLink to={path} className={({isActive}) => isActive ? "nav-active" : ""}>
+                  {name} 
+                </NavLink>
+              </li>
+            )
+          })}
+        </ul>
+        <ul className={list ? 'show__list' : 'hide__list'}>
+          {links.map(({name, path}, index) => {
+            return (
+              <li key={index} >
+                <NavLink to={path} onClick={manages}>
                   {name} 
                 </NavLink>
               </li>

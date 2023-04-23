@@ -280,13 +280,77 @@
 
 @media only screen and (min-width:0) and (max-width:650px) {
   .scard-container {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 95%;
   }
-
+  
   .scard__content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    max-width: 450px;
   }
+
+  .scard-top {
+    height: 50px;
+    padding: 5px 15px;
+  }
+
+  .scard-top div {
+    height: 40px;
+  }
+
+  .scard-top h1 {
+    font-size: 2rem;
+  }
+
+  
+  .scard-content {
+    width: 100%;
+  }
+  
+  .scard-body {
+    gap: 1rem;
+  }
+  
+  .scard-img {
+    width: 35%;
+  }
+  
+  .scard-img img {
+    width: 100%;
+  }
+
+  .scard-details {
+    width: 80%;
+  }
+  
+  .scard-bottom {
+    height: 40px;
+    padding: 10px;
+  }
+
+  .right-scard {
+    width: 100%;
+    margin-top: 1rem;
+    max-width: 342px;
+  }
+  
+  .suggestions {
+    width: 100%;
+    gap: .5rem;
+  }
+
+  .suggestions-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .suggestions-text p {
+    font-size: 1em;
+  }
+
 }

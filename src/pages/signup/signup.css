@@ -75,8 +75,15 @@
 }
 
 @media only screen and (min-width:0) and (max-width:650px) {
+  .form-container {
+    flex-direction: column-reverse;
+    margin-bottom: 6rem;
+    padding-top: 6rem;
+  }
+
   .form-sign {
     width: 90%;
+    margin: 0;
   }
 
   .input-container {
