@@ -4,6 +4,9 @@ import FormInput from '../../components/form.js'
 
 import { useRef, useState } from 'react'
 
+import { useDispatch } from 'react-redux'
+import { getSign } from '../../store/signinSlice.js'
+
 const Signup = () => { 
   const usernameRef = useRef()
   const emailRef = useRef()
@@ -11,7 +14,13 @@ const Signup = () => {
   const passwordRef = useRef()
   const confirmpasswordRef = useRef()
 
+  const usernameeRef = useRef()
+  const passworddRef = useRef()
+
   const [success, setSuccess] = useState(false)
+  const [success1, setSuccess1] = useState(false)
+
+  const dispatch = useDispatch()
   
   const HandleClickSignup = (e) => {
     e.preventDefault()
@@ -21,7 +30,8 @@ const Signup = () => {
         username: usernameRef.current.value,
         email: emailRef.current.value,
         birth: birthRef.current.value,
-        password: passwordRef.current.value
+        password: passwordRef.current.value,
+        text: ''
       }), 
       headers: {
         'Content-Type': 'application/json',
@@ -42,6 +52,7 @@ const Signup = () => {
 
   const HandleClickSignin = async (e) => {
     e.preventDefault()
+    setSuccess1('Loading...')
     const res = await fetch('https://dull-red-chick-wrap.cyclic.app/form', {
       method: 'GET',
       headers: {
@@ -56,15 +67,20 @@ const Signup = () => {
 
     const json = await res.json()
     console.log(json)
-
-    const user = json.find(o => o.username === usernameRef.current.value)
-    const pass = json.find(o => o.password === passwordRef.current.value)
-
+    
+    const user = json.find(o => o.username === usernameeRef.current.value)
+    const pass = json.find(o => o.password === passworddRef.current.value)
+    
     if (pass && user) {
-      window.location.href = "/"
-      console.log(usernameRef.current.value)
-      console.log(passwordRef.current.value)
+      setSuccess1(true)
+      dispatch(getSign({pass, user}))
+      setTimeout(() => {
+        window.location.href = "/"
+      }, "1500")
+      console.log(usernameeRef.current.value)
+      console.log(passworddRef.current.value)
     }else{
+      setSuccess1('your username or password is wrong')
       console.log('noooooooooooo')
       let err = ''
       return (
@@ -73,14 +89,15 @@ const Signup = () => {
     }
   }
 
-
   return (
     <div className="form-container">
       <form className='form-sign' onSubmit={HandleClickSignin}>
         <h1>Signin</h1>
-        <FormInput refer= {usernameRef} id='name' topic='username' type='text' placeholder='username'/>
-        <FormInput refer= {passwordRef} id='password' topic='password' type='password' placeholder='password' errorMessage='username or password is wrong'/>
+        <FormInput refer= {usernameeRef} id='name' topic='username' type='text' placeholder='username'/>
+        <FormInput refer= {passworddRef} id='password' topic='password' type='password' placeholder='password' errorMessage='username or password is wrong'/>
         <FormInput id='submit' topic='' type='submit'/>
+        {success1 == true && <h3>you are Signed in</h3>}
+        <h3>{success1}</h3>
       </form>
       <form className='form-sign' onSubmit={HandleClickSignup}>
         <h1>Signup</h1>

@@ -5,10 +5,12 @@ import './index.css'
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import cardSlice from "./store/cardSlice.js";
+import signinSlice from "./store/signinSlice.js";
 
 const store = configureStore({
   reducer: {
-    card: cardSlice.reducer
+    card: cardSlice.reducer,
+    signin: signinSlice.reducer
   }
 })
 

@@ -25,6 +25,10 @@
   color: var(--main-text);
 }
 
+.form-container h3 {
+  color: white;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;

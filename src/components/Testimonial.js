@@ -6,15 +6,21 @@ import idea1 from '../images/idea1.jpg'
 import {AiFillLike} from 'react-icons/ai/index.js'
 import {AiTwotoneDislike} from 'react-icons/ai/index.js'
 
+import { useDispatch } from 'react-redux'
+import { mapIdea } from '../store/signinSlice.js'
+import { match } from 'assert'
+
 
 const Testimonial = () => {
+  const dispatch = useDispatch()
 
   const text = useRef()
   const username = useRef()
   const password = useRef()
   
-  const handleSubmit = async () => {
-    const res = await fetch('https://dull-red-chick-wrap.cyclic.app/card' ,{
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const res = await fetch('http://localhost:10000/form' ,{
       header: {
         "Access-Control-Allow-Origin" : "*", 
         "Access-Control-Allow-Credentials" : true,
@@ -23,8 +29,71 @@ const Testimonial = () => {
       }
     })
 
-    const user = res.find({})
+    console.log(username.current.value)
+    console.log(password.current.value)
+    const json = await res.json()
+    const user = json.find((info) => 
+      info.username === username.current.value && info.password === password.current.value
+    )
+    console.log(user)
+
+    console.log(JSON.stringify(text.current.value))
+    
+    if(user._id) {
+      const response = await fetch('http://localhost:10000/form/' + user._id, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          "Access-Control-Allow-Origin" : "*", 
+          "Access-Control-Allow-Credentials" : true,
+          "Access-Control-Expose-Headers": "*",
+          "Access-Control-Allow-Methods": "*" 
+        }
+      })
+      const json = await response.json()
+      console.log(json)
+
+      const response2 = await fetch('http://localhost:10000/form', {
+        method: 'POST',
+        body: JSON.stringify({
+          username: username.current.value,
+          email: user.email,
+          birth: user.birth,
+          password: password.current.value,
+          text: text.current.value
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          "Access-Control-Allow-Origin" : "*", 
+          "Access-Control-Allow-Credentials" : true,
+          "Access-Control-Expose-Headers": "*",
+          "Access-Control-Allow-Methods": "*" 
+        }
+      })
+      const json2 = await response2.json()
+      console.log(json2)
+    }
   }
+
+  const response2 = async () => {
+    const res2 = await fetch('http://localhost:10000/form' ,{
+    header: {
+      "Access-Control-Allow-Origin" : "*", 
+      "Access-Control-Allow-Credentials" : true,
+      "Access-Control-Expose-Headers": "*",
+      "Access-Control-Allow-Methods": "*" 
+    }
+  })
+    const data = await res2.json()
+    console.log(data)
+    dispatch(mapIdea(data))
+  } 
+  response2()
+
+  const signin = JSON.parse(localStorage.getItem("idea"))
+  console.log(signin)
 
   const handleLike = () => {
 
@@ -63,14 +132,17 @@ const Testimonial = () => {
               </form>
               <img className='submit-img' src={idea1} alt="" />
             </div>
-            {testimonials.map((ipe) => {
-              const id = ipe.id
+            {signin &&
+            signin.map((ipe) => {
+              let indexAva = Math.floor(Math.random() * 5)
+              console.log(indexAva)
+              const avatar = testimonials[indexAva].avatar
               return (
-              <div key={ipe.id} id={ipe.id} className="ipe-content">
+              <div key={ipe._id} className="ipe-content">
                 <div className="ipe-top">
                   <div className="ipe-details">
-                    <img src={ipe.avatar} alt="" />
-                    <h3>{ipe.name} - {ipe.job}</h3>
+                    <img src={avatar} alt="" />
+                    <h3>{ipe.username} - {ipe.email}</h3>
                   </div>
                   <div className="ipe-icon">
                     <button id={ipe.id} onClick={() => handleLike()}>
@@ -82,7 +154,7 @@ const Testimonial = () => {
                   </div>
                 </div>
                 <div className="ipe-bottom">
-                  <p>{ipe.quote}</p>
+                  <p>{ipe.text}</p>
                 </div>
               </div>
               )

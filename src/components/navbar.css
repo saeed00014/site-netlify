@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: right;
   width: 70%;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .navbar-right-big-pic {
@@ -55,6 +55,66 @@
   width: 15%;
   gap: 1rem;
   z-index: 6;
+}
+
+.acount-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.acount-div a {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.acount-info {
+  position: absolute;
+  top: 3rem;
+  bottom: 3rem;
+  right: -3rem;
+  left: -3rem;
+  height: 14rem;
+  padding: 0rem 1rem;
+  min-width: 200px;
+  list-style: none;
+  background-color: var(--alike-color);
+}
+
+.acount-info li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3.1rem;
+  color: var(--main-text);
+}
+
+.acount-info li p ,h3{
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding: 0 1rem;
+}
+
+.acount-info h2 {
+  font-size: 1.5rem;
+}
+
+.acount-info h3 {
+  width: 200px;
+}
+
+.sign-out {
+  background-color: var(--backup-text);
+  margin-top: .8rem;
+  cursor: pointer;
+}
+
+.sign-out:hover {
+  background-color: var(--golden-color);
 }
 
 .nav__links {
@@ -102,9 +162,9 @@
   justify-content: start;
   align-items: start;
   top: 70px;
-  bottom: -400px;
+  bottom: -300px;
   right: -350px;
-  width: 300px;
+  width: 200px;
   list-style: none;
   background-color: var(--alike-color);
   transition: all .3s ease;
@@ -125,8 +185,8 @@
   justify-content: start;
   align-items: center;
   width: 100%;
-  font-size: 2rem;
-  padding: 1.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
   color: white;
  }
  
@@ -141,7 +201,7 @@
   justify-content: start;
   align-items: start;
   top: 70px;
-  bottom: -400px;
+  bottom: -300px;
   right: -350px;
   list-style: none;
   background-color: var(--alike-color);
@@ -249,7 +309,7 @@
   .navbar-right {
     display: flex;
     width: 60%;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .navbar-right-big-pic {
@@ -269,6 +329,14 @@
     width: 40px;
     height: 40px;
     color: var(--main-text);
+  }
+
+  .acount-div {
+    width: 17%;
+  }
+
+  .acount-div a {
+    font-size: 2vw;
   }
 
   .nav__links {
@@ -351,6 +419,19 @@
     width: 40px;
     height: 40px;
     color: var(--main-text);
+  }
+
+  .acount-div {
+    width: 15%;
+  }
+
+  .acount-div a {
+    font-size: 3vw;
+  }
+
+  .acount-info {
+    right: -2rem;
+    left: -7rem;
   }
 
   .nav__links {
