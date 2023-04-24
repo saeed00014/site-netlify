@@ -67,7 +67,7 @@ const Card = () => {
   }, [card, dispatch])
 
   return (
-    <section className='scard'>
+    <section id='header' className='scard'>
       <div className="scard-container">
         <div className="scard__content-container">
           {card.cardItems &&
