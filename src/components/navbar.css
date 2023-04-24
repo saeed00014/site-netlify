@@ -92,7 +92,8 @@
   color: var(--main-text);
 }
 
-.acount-info li p ,h3{
+.acount-info li p,
+.acount-info li h3{
   display: flex;
   flex-direction: column;
   gap: .2rem;
