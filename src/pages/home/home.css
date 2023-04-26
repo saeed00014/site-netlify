@@ -538,7 +538,6 @@
   align-items: center;
   width: 100vw;
   height: 100%;
-
 }
 
 .value-container {
@@ -1622,6 +1621,27 @@ footer {
     margin-bottom: 0.5rem;
   }
 
+  .values {
+    height: 400px;
+    margin: 4rem 0 4rem 0;
+  }
+
+  .value-container {
+    align-items: center;
+    justify-content: start;
+  }
+
+  .value-icon p {
+    font-size: 1.4rem;
+  }
+  
+  .value__card-container {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 400px;
+  }
+
   .value__card-container img:nth-child(1) {
     width: 150px;
     height: 250px;
@@ -1689,18 +1709,18 @@ footer {
   
   .value__card-container:hover img:nth-child(5) {
     right: -20px;
-    top: 400px;
+    top: 340px;
     opacity: 1;
     transition: all .5s ease;
   } 
 
   .l-btn {
-    bottom: 120px;
+    bottom: 90px;
     left: -15px;
   }
 
   .r-btn {
-    bottom: 120px;
+    bottom: 90px;
     right: -15px;
   }
 
@@ -1779,34 +1799,13 @@ footer {
     height: 100%;
   }
 
-  .value-icon p {
-    font-size: 1.7rem;
-  }
-
-  .value-container {
-    width: 95%;
-    height: 650px;
-    max-width: 1170px;
-    margin: 1rem 0;
-  }
-  
-  .value__card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .value-card {
-    height: 250px;
-    gap: 1rem;
-  }
-
   .faqs-container {
     font-size: 1.6rem;
   }
 
   .section-head {
     justify-content: center;
+    font-size: 1.5rem;
   }
 
   .faqs-content {
