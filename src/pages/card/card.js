@@ -9,6 +9,8 @@ import { BiChevronRight } from 'react-icons/bi/index.esm.js'
 import { useEffect, useState } from 'react';
 
 const Card = () => {
+
+  const [pay, setPay] = useState(false)
   
   const card = useSelector((state) => state.card)
   console.log(card.cardItems[0])
@@ -124,7 +126,7 @@ const Card = () => {
             <div className="pricehandler-top">
               <h3>Subtotal ({card.cardTotalQuantity} item{card.cardTotalQuantity > 1 && 's'}): {card.cardTotalPrice}$</h3>
             </div>
-            <button>proceed to checkout({card.cardTotalQuantity} item{card.cardTotalQuantity > 1 && 's'})</button>       
+            <button onClick={() => setPay(!pay)}>proceed to checkout({card.cardTotalQuantity} item{card.cardTotalQuantity > 1 && 's'})</button>       
           </div>
           <h3>Check our Suggested Products</h3>
           {shop.map((product) => {
@@ -140,6 +142,35 @@ const Card = () => {
             </div>
             )
           })}
+        </div>
+      </div>
+      <div className={pay ? "proceed-pay" : "no-pay"}>
+        <div className="pay-top">
+          <h1>You are Buying</h1>
+          <button onClick={() => setPay(false)}>x</button>
+        </div>
+        <div className="pay__product-container">
+          {card.cardItems && 
+            card.cardItems.map((product) => {
+              return (
+                <div className='pay-product'>
+                  <img src={product.image} alt="" />
+                </div>
+              )
+          })}
+        </div>
+        <h3>Subtotal: {card.cardTotalQuantity} item{card.cardTotalQuantity > 1 && 's'}: {card.cardTotalPrice}$</h3>
+        <h3>Choose your Payment Method</h3>
+        <div className='pay-method'>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <img src="" alt="" />
+          </div>
+          <div>
+            <img src="" alt="" />
+          </div>
         </div>
       </div>
     </section>

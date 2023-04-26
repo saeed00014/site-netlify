@@ -10,7 +10,7 @@ const Header = ({image, title, text }) => {
 
   return (
     <header style={mystyle} className='header-pages' id='header'>
-      <div className="header-container">
+      <div className="header__back-container">
         <div className="content-img">
           <h1>{title}</h1>
           <p>{text}</p>
