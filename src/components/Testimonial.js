@@ -78,7 +78,7 @@ const Testimonial = () => {
   }
 
   const response2 = async () => {
-    const res2 = await fetch('http://localhost:10000/form' ,{
+    const res2 = await fetch('https://dull-red-chick-wrap.cyclic.app/form' ,{
     header: {
       "Access-Control-Allow-Origin" : "*", 
       "Access-Control-Allow-Credentials" : true,
