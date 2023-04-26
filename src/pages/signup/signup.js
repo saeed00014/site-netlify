@@ -67,7 +67,7 @@ const Signup = () => {
 
     const json = await res.json()
     console.log(json)
-    
+
     const user = json.find(o => o.username === usernameeRef.current.value)
     const pass = json.find(o => o.password === passworddRef.current.value)
     
@@ -98,6 +98,12 @@ const Signup = () => {
         <FormInput id='submit' topic='' type='submit'/>
         {success1 == true && <h3>you are Signed in</h3>}
         <h3>{success1}</h3>
+        <div className='quick-signin'>
+          <h3>Signin as guest</h3>
+          <div className='quick-bottom'>
+            <h3>username: guest</h3><h3>password: geustA#1</h3>
+          </div>
+        </div>
       </form>
       <form className='form-sign' onSubmit={HandleClickSignup}>
         <h1>Signup</h1>

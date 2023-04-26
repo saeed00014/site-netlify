@@ -417,8 +417,28 @@
   }
 
   .proceed-pay {
-    top: 1500px;
-    transform: scale(.5);
+    top: initial;
+    bottom: 1000px;
+    width: 95%;
+    max-width: 350px;
+    height: 300px;
+  }
+
+  .pay__product-container {
+    
+  }
+
+  .pay-product {
+    width: 30%;
+    height: 80px;
+  }
+
+  .pay-product img {
+    height: 100%;  
+  }
+
+  .pay-top h1 {
+    height: 30px;
   }
 
 }

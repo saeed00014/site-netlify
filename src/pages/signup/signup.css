@@ -78,6 +78,18 @@
   display: flex;
 }
 
+.quick-signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quick-bottom {
+  display: flex;
+  gap: 1rem;
+}
+
 @media only screen and (min-width:0) and (max-width:650px) {
   .form-container {
     flex-direction: column-reverse;

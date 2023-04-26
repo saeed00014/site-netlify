@@ -7,8 +7,8 @@
   height: 400px;
   background-repeat: no-repeat;
   background-size: 2100px 1400px;
-  background-position-x: right;
-  background-position-y: bottom;
+  background-position-x: center;
+  background-position-y: -800px;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -296,10 +296,6 @@
 }
 
 .card__main-container:hover {
-  .card__main-container {
-    
-  }
-
   .card-front {
     transform: translatey(-35%) scale(.8);
   }
@@ -359,15 +355,31 @@
 @media only screen and (min-width:650px) and (max-width: 1000px) {
   .header-pages {
     align-items: start;
-    justify-content: start;
+    justify-content: center;
+    background-position-x: center;
+    background-position-y: -200px;
+    background-size: 1300px 900px;
   }
   
   .header__back-container {
+    width: 90%;
+  }
+
+  
+  .header-pages::after {
+    position: absolute;
+    content: '';
+    height: 100%;
     width: 100%;
+    left: 0;
+    background-image: linear-gradient(to right, rgb(89, 161, 255) 0%, rgba(0, 0, 0, 0) 90%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 0;
   }
   
   .content-img {
-    width: 50%;
+    width: 60%;
     padding: 1rem;
   }
 
@@ -385,6 +397,9 @@
     align-items: start;
     justify-content: start;
     height: 350px;
+    background-position-x: center;
+    background-position-y: -800px;
+    background-size: 1500px 1300px;
   }
   
   .header__back-container {
@@ -392,18 +407,31 @@
     justify-content: start;
     width: 100%;
   }
+
+  
+  .header-pages::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-image: linear-gradient(to right, rgb(89, 161, 255) 0%, rgba(0, 0, 0, 0) 90%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 0;
+  }
   
   .content-img {
-    width: 50%;
+    width: 95%;
     padding: 1.5rem 1rem;
   }
 
   .content-img h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   
   .content-img p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .section__t-container {

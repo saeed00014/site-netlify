@@ -1046,13 +1046,14 @@
   color: wheat;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   padding: 10px;
   border: 1px solid var(--main-text);
   background-color: var(--main-text);
   color: var(--background-color);
-  width: 70%;
+  width: 65%;
+  max-width: 700px;
   gap: 1rem;
 }
 
@@ -1473,6 +1474,10 @@ footer {
     font-size: 3rem;
   }
 
+  .ipe-content {
+    width: 80%;
+  }
+
   .footer__main-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -1834,6 +1839,10 @@ footer {
 
   .enter-idea div input {
     width: 100%;
+  }
+
+  .ipe-content {
+    width: 95%;
   }
 
   .footer__main-container {
