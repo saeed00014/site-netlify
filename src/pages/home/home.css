@@ -1114,7 +1114,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
 }
 
 .first-article {
@@ -1213,6 +1213,7 @@ footer {
   justify-content: start;
   margin-top: 2rem;
   gap: 1rem;
+  width: 100%;
   color: var(--main-text);
 }
 
@@ -1225,7 +1226,7 @@ footer {
 }
 
 .fourth-article h4 {
-  width: 135px;
+  
 }
 
 .footer-bottom {
