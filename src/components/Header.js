@@ -11,8 +11,8 @@ const Header = () => {
               <h1 className="typing-text">Welcome to<br/>BODYMAKE.COM</h1>
               <h3>Strongest BodyBuilding Services and Products</h3>
               <div className="gt-st">
-                <Link to="plans/">
-                    <button className="btn-lg">Get started</button>
+                <Link className="btn-lg" to="plans/">
+                  Get started
                 </Link>        
               </div>
               </div>

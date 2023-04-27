@@ -176,13 +176,11 @@
 
 .gt-st {
   display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-.gt-st a {
-  display: inline-block;
-  margin: 0;
+  align-items: end;
+  justify-content: start;
+  height: 60px;
+  cursor: pointer;
+  margin-top: -.5rem;
 }
 
 .btn-lg {
@@ -197,11 +195,10 @@
   color: var(--main-text);
   margin-top: 0;
   font-size: 20px;
-  cursor: pointer;
   transition: all .6s ease-in-out;
 }
 
-.gt-st a:hover button {
+.gt-st:hover .btn-lg {
   background-color: var(--golden-color);
   translate: 0 -1.3rem;
   transition: all .2s ease-in-out;
@@ -1511,7 +1508,6 @@ footer {
     z-index: -1;
   }
 
-  
   .main__header-container::before {
     display: none;
   }
@@ -1732,7 +1728,7 @@ footer {
   }
 
   .shop-description h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .addcard-btn {
