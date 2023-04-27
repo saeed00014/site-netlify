@@ -20,7 +20,7 @@ const Testimonial = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await fetch('http://localhost:10000/form' ,{
+    const res = await fetch('https://dull-red-chick-wrap.cyclic.app/form' ,{
       header: {
         "Access-Control-Allow-Origin" : "*", 
         "Access-Control-Allow-Credentials" : true,
@@ -40,7 +40,7 @@ const Testimonial = () => {
     console.log(JSON.stringify(text.current.value))
     
     if(user._id) {
-      const response = await fetch('http://localhost:10000/form/' + user._id, {
+      const response = await fetch('https://dull-red-chick-wrap.cyclic.app/form/' + user._id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const Testimonial = () => {
       const json = await response.json()
       console.log(json)
 
-      const response2 = await fetch('http://localhost:10000/form', {
+      const response2 = await fetch('https://dull-red-chick-wrap.cyclic.app/form', {
         method: 'POST',
         body: JSON.stringify({
           username: username.current.value,

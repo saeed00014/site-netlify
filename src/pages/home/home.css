@@ -1207,7 +1207,6 @@ footer {
   justify-content: start;
   margin-top: 2rem;
   gap: 1rem;
-  width: 100%;
   color: var(--main-text);
 }
 

@@ -30,22 +30,6 @@ const Values = () => {
     }
   ]
 
-  const HandleClickright = () => {
-    if (index === 1) {
-      setIndex(0)
-      setIndex1(1)
-      setIndex2(2)
-    }else if (index === 2) {
-      setIndex(0)
-      setIndex1(1)
-      setIndex2(2)
-    }else {
-      setIndex(1)
-      setIndex1(2)
-      setIndex2(0)
-    }
-  }
-
   const HandleClickleft = () => {
     if (index === 1) {
       setIndex(0)
@@ -61,7 +45,6 @@ const Values = () => {
       setIndex2(1)
     }
   }
-  
 
   return (
     <section id='values' className="values">
