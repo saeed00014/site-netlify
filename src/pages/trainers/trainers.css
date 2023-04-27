@@ -295,6 +295,7 @@
   z-index: -1;
 }
 
+
 .card__main-container:hover {
   .card-front {
     transform: translatey(-35%) scale(.8);

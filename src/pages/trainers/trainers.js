@@ -13,9 +13,6 @@ import { useState } from "react"
 
 const Trainers = () => {
 
-  const [back, setBack] = useState(false)
-
-  
   return (
     <section className="trainers">
       <Header image={BackgroundHeader} title='Who are Your Trainers' text='We have the Most Exprienced and responsible Exports to Help you in your Way'/>
@@ -28,7 +25,7 @@ const Trainers = () => {
           };
           
           return(
-            <div onClick={() => setBack(!back)} className="card__main-container">
+            <div className="card__main-container">
             <div className="card-front">
               <div className="card-img">
                 <img src={image} alt="" />

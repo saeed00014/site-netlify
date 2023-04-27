@@ -37,7 +37,6 @@
   background-size: 2100px 880px;
   background-attachment: fixed;
   background-position-x: center;
-  background-position-y: ;
   z-index: -1;
 }
 
@@ -1036,11 +1035,6 @@
   margin-bottom: .5rem;
 }
 
-.enter-idea a {
-
-}
-
-
 .ipe-content {
   color: wheat;
   display: flex;
@@ -1225,10 +1219,6 @@ footer {
   color: red;
 }
 
-.fourth-article h4 {
-  
-}
-
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -1265,10 +1255,6 @@ footer {
     width: 75%;
   }
 
-  .main__header-left-content h3 {
-    font-size: ;
-  }
-  
   .btn-lg {
     margin-top: 0;
   }
